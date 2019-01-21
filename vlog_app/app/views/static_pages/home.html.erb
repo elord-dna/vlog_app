@@ -1,2 +1,12 @@
-<h1>Home</h1>
-<p>you are now on the home page</p>
+<%provide(:title, "Home")%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=yield(:title)%></title>
+  </head>
+  <body>
+
+    <h1>This is Home Page</h1>
+    <p>you are now on the home page</p>
+  </body>
+</html>

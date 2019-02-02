@@ -12,11 +12,11 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-      
+        <%= link_to "sample app", '#', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", 'static_pages_home_url' %></li>
-            <li><%= link_to "Help", '#{static_pages_heko_url}' %></li>
+            <li><%= link_to "Home", home_path %></li>
+            <li><%= link_to "Help", help_path %></li>
             <li><%= link_to "About", '#' %></li>
             <li><%= link_to "Log in", '#' %></li>
           </ul>
@@ -25,6 +25,7 @@
     </header>
     <div class="container">
       <%= yield %>
+      <%= render 'static_pages/footer' %>
     </div>
   </body>
 </html>

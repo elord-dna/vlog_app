@@ -13,5 +13,6 @@ class SessionsController < ApplicationController
         format.html(redirect_to :login)
         format.json()
       end
+    end
   end
 end

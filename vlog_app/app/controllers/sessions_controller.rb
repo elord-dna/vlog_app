@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if user && user.authenticate(params[:session][:password])
         log_in user
-        format.html(redirect_to user, notice: 'Success to login in')
-        format.json { render :show, status: :login, location: @user }
+        format.html { redirect_to user, notice: 'Success to login in'}
+        format.json { render :show, status: :login, location: user }
       else
         format.html(redirect_to :login)
         format.json()

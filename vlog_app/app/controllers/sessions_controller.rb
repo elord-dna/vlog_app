@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if user && user.authenticate(params[:session][:password])
         log_in user
-        params[:sessiom][:remember_me] == '1' ? remember(user) : forget(user)
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         format.html { redirect_to user, notice: 'Success to login in'}
         format.json { render :show, status: :login, location: user }
       else

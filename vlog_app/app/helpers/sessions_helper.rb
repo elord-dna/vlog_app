@@ -18,7 +18,7 @@ module SessionsHelper
 
     # forget the current user
     def forget(user)
-        user.fotget
+        user.forget
         cookies.delete(:user_id)
         cookies.delete(:remember_token)
     end

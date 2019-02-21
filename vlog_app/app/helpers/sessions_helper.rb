@@ -35,7 +35,7 @@ module SessionsHelper
 
     def remember(user)
         user.remember
-        cookies.permanent.signed[:user_id] = user_id
+        cookies.permanent.signed[:user_id] = user.id
         cookies.permanent[:remember_token] = user.remember_token
         # cookies.permanet[:xxx] = xxx is similar with
         # cookies[:xxx] = {value: xxx, expires: 20.years.form_now.utc}

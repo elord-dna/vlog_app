@@ -43,7 +43,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update_attribute(user_edit_params)
+      
+      if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -80,7 +81,11 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :phone, :password, :password_confirmation)
     end
 
-    def user_edit_params
-      params.require(:user).permit(:name, :email, :phone)
+    def set_params(user, params)
+      return false if user.nil?
+      user.name = params[:name]
+      user.email = params[:email]
+      user.phone = params[:phone]
+      return true
     end
 end

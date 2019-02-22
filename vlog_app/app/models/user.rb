@@ -7,7 +7,7 @@ class User < ApplicationRecord
                       format: { with: VALID_EMAIL_REGEX },
                       uniqueness: { case_sensitive: true }
     has_secure_password
-    validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, on: create
 
     # return the hash of the give string
     def User.digest(string)
@@ -39,5 +39,27 @@ class User < ApplicationRecord
         BCrypt::Password.new(remember_digest).is_password?(remember_token)
         # BCrypt::password.new(remember_digest) == remember_token
         # in this way, == is rewriten by the bcrypt
+    end
+
+    def check_name
+      if self.name && self.name.length <= 50
+        return true
+      else
+        errors.add(:name, "name is invalid")
+        return false
+      end
+    end
+
+    def check_phone
+      if self.phone && self.phone.length == 11 && self.phone.match(/\d{11}/)
+        return true
+      else 
+        errors.add(:phone, "phone is invalid")
+        return false
+      end
+    end
+
+    def check_email
+      self.email && self.email.length <= 255 && self.email.match(VALID_EMIAL_REGEX) && count(email: self.email) < 1
     end
 end

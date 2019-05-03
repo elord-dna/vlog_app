@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* microposts */
-
+//$gray-light: #eaeaea
 .microposts {
     list-style: none;
     padding: 0;
@@ -23,7 +23,7 @@
       }
     }
     .timestamp {
-      color: $gray-light;
+      color: #eaeaea;
       display: block;
       margin-left: 60px;
     }
@@ -47,3 +47,5 @@
       border: 0;
     }
   }
+
+

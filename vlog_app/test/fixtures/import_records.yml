@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyString
+  num: 
+  unit: MyString
+  price: 
+  total: 
+  other: MyString
+
+two:
+  code: MyString
+  name: MyString
+  num: 
+  unit: MyString
+  price: 
+  total: 
+  other: MyString

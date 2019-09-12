@@ -3,10 +3,10 @@ class CreateImportRecords < ActiveRecord::Migration[5.2]
     create_table :import_records do |t|
       t.string :code
       t.string :name
-      t.int :num
+      t.integer :num
       t.string :unit
-      t.double :price
-      t.double :total
+      t.float :price
+      t.float :total
       t.string :other
 
       t.timestamps

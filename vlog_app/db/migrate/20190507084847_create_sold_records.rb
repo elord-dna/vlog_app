@@ -3,9 +3,9 @@ class CreateSoldRecords < ActiveRecord::Migration[5.2]
     create_table :sold_records do |t|
       t.string :code
       t.string :name
-      t.int :num
+      t.integer :num
       t.string :unit
-      t.double :price
+      t.float :price
       t.string :total
       t.string :other
       t.string :billNo

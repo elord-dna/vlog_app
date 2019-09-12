@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_110828) do
+ActiveRecord::Schema.define(version: 2019_05_07_085036) do
+
+  create_table "bills", force: :cascade do |t|
+    t.string "no"
+    t.string "phone"
+    t.string "addr"
+    t.string "customer"
+    t.float "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "import_records", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.integer "num"
+    t.string "unit"
+    t.float "price"
+    t.float "total"
+    t.string "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -19,6 +41,35 @@ ActiveRecord::Schema.define(version: 2019_04_22_110828) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sold_records", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.integer "num"
+    t.string "unit"
+    t.float "price"
+    t.string "total"
+    t.string "other"
+    t.string "billNo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "store_records", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "num"
+    t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|

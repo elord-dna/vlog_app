@@ -5,7 +5,7 @@ class CreateBills < ActiveRecord::Migration[5.2]
       t.string :phone
       t.string :addr
       t.string :customer
-      t.double :total
+      t.float :total
 
       t.timestamps
     end
